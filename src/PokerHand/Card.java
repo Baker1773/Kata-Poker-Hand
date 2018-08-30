@@ -12,13 +12,13 @@ public class Card {
 	}
 
 	// returns the suit of the card
-	public char GetSuit() {
+	public char getSuit() {
 		return suit;
 	}
 
 	// returns an integer value for the card
 	// this allows the card to be compared to each other
-	public int GetIntegerValue() {
+	public int getIntegerValue() {
 		int val = 0;
 
 		switch (value) {
@@ -69,7 +69,7 @@ public class Card {
 	}
 
 	// Returns a String value of the cards value
-	public String GetValue() {
+	public String getValue() {
 		String val = "";
 
 		switch (value) {

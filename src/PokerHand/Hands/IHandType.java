@@ -16,13 +16,13 @@ public interface IHandType {
 	// type, such as in a full house it only compares the
 	// three of a kind so it saves the three of a kind
 	// as the cards used
-	public Card[] GetUsedCards();
+	public Card[] getUsedCards();
 
 	// returns the cars not used
-	public Card[] GetUnusedCards();
+	public Card[] getUnusedCards();
 
 	// gets the rank of the card
 	// high card being the lowest at 1
 	// straight flush being the highest at 9
-	public int GetTypeRank();
+	public int getTypeRank();
 }

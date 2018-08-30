@@ -6,14 +6,14 @@ public class TwoPair extends HandType {
 
 	public TwoPair(Card[] cards) {
 		super(cards);
-		Generate();
+		generate();
 	}
 
 	/**
 	 * looks for 1 pair with the original hand then looks for another pair with
 	 * the remaining cards. If both pairs are valid then there two pair exists
 	 */
-	public void Generate() {
+	public void generate() {
 		if (originalHand.length >= 4) {
 			PairCard one = new PairCard(originalHand);
 			if (one.isValidHand()) {
@@ -26,7 +26,7 @@ public class TwoPair extends HandType {
 
 			}
 		}
-		GenerateUnusedCards();
+		generateUnusedCards();
 	}
 
 }

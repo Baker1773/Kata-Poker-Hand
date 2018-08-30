@@ -17,13 +17,13 @@ public class Game {
 
 		// reads in text and sets up player
 		String input = in.nextLine();
-		SetUpPlayer(input);
+		setUpPlayer(input);
 
 		// closes input scanner
 		in.close();
 
 		// gets hand results
-		String result = GetResults();
+		String result = getResults();
 
 		// prints results
 		System.out.println(result);
@@ -31,7 +31,7 @@ public class Game {
 
 	// reads in a String and sets up both players
 	// based on the input text
-	public static void SetUpPlayer(String input) {
+	public static void setUpPlayer(String input) {
 
 		// getting name for player one
 		int index = input.indexOf(':');
@@ -86,11 +86,11 @@ public class Game {
 	}
 
 	// returns the results of the two hands as a string.
-	public static String GetResults() {
+	public static String getResults() {
 		String results = "";
 		Pair<Player, String> handResults = HandComparator.CompareHand(one, two);
 		if (handResults.getKey() != null) {
-			results = handResults.getKey().GetName() + " wins. - with "
+			results = handResults.getKey().getName() + " wins. - with "
 					+ handResults.getValue();
 		} else
 			results = "Tie.";

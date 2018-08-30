@@ -5,19 +5,19 @@ import PokerHand.Card;
 public class Straight extends HandType {
 	public Straight(Card[] cards) {
 		super(cards);
-		Generate();
+		generate();
 	}
 
 	/**
 	 * Finds the lowest card and then looks to see if the next card is in the
 	 * hand. This is repeated 5 times to find a straight
 	 */
-	public void Generate() {
+	public void generate() {
 		if (originalHand.length >= 5) {
 			// Get minimum card
 			Card min = originalHand[0];
 			for (int i = 1; i < originalHand.length; i++) {
-				if (min.GetIntegerValue() > originalHand[i].GetIntegerValue())
+				if (min.getIntegerValue() > originalHand[i].getIntegerValue())
 					min = originalHand[i];
 			}
 
@@ -27,8 +27,8 @@ public class Straight extends HandType {
 			for (; i < originalHand.length - 1 && foundNextCard; i++) {
 				foundNextCard = false;
 				for (int j = 0; j < originalHand.length & !foundNextCard; j++) {
-					if (min.GetIntegerValue() + 1 == originalHand[j]
-							.GetIntegerValue()) {
+					if (min.getIntegerValue() + 1 == originalHand[j]
+							.getIntegerValue()) {
 						min = originalHand[j];
 						foundNextCard = true;
 						foundNextCardCount++;
@@ -42,6 +42,6 @@ public class Straight extends HandType {
 				used = originalHand;
 			}
 		}
-		GenerateUnusedCards();
+		generateUnusedCards();
 	}
 }

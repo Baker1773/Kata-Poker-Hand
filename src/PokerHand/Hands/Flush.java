@@ -6,17 +6,17 @@ public class Flush extends HandType {
 
 	public Flush(Card[] cards) {
 		super(cards);
-		Generate();
+		generate();
 	}
 
 	// looks to see if all the cards have the same suit
-	public void Generate() {
+	public void generate() {
 		if (originalHand.length >= 5) {
 			Card c = originalHand[0];
 			boolean equalSuit = true;
 
 			for (int i = 0; i < originalHand.length && equalSuit; i++) {
-				if (c.GetSuit() != originalHand[i].GetSuit())
+				if (c.getSuit() != originalHand[i].getSuit())
 					equalSuit = false;
 			}
 
@@ -28,7 +28,7 @@ public class Flush extends HandType {
 			}
 		}
 
-		GenerateUnusedCards();
+		generateUnusedCards();
 	}
 
 }

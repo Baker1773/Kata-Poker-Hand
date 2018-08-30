@@ -5,7 +5,7 @@ import PokerHand.Card;
 public class PairCard extends HandType {
 	public PairCard(Card[] cards) {
 		super(cards);
-		Generate();
+		generate();
 	}
 
 	/**
@@ -13,15 +13,15 @@ public class PairCard extends HandType {
 	 * another pair and valid is true it will see if the new pair has higher
 	 * value and go with the pair with higher value
 	 */
-	public void Generate() {
+	public void generate() {
 		if (originalHand.length >= 2) {
 			for (int i = 0; i < originalHand.length - 1; i++) {
 				for (int j = i + 1; j < originalHand.length; j++) {
-					if (originalHand[i].GetIntegerValue() == originalHand[j]
-							.GetIntegerValue()) {
+					if (originalHand[i].getIntegerValue() == originalHand[j]
+							.getIntegerValue()) {
 						if (valid) {
-							if (used[0].GetIntegerValue() < originalHand[i]
-									.GetIntegerValue()) {
+							if (used[0].getIntegerValue() < originalHand[i]
+									.getIntegerValue()) {
 								used[0] = originalHand[i];
 								used[1] = originalHand[j];
 							}
@@ -36,6 +36,6 @@ public class PairCard extends HandType {
 				}
 			}
 		}
-		GenerateUnusedCards();
+		generateUnusedCards();
 	}
 }

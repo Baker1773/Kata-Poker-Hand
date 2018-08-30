@@ -15,12 +15,12 @@ public class Player {
 	}
 
 	// returns players name
-	public String GetName() {
+	public String getName() {
 		return name;
 	}
 
 	// returns players hand
-	public Card[] GetHand() {
+	public Card[] getHand() {
 		return hand;
 	}
 }

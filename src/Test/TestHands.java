@@ -19,7 +19,7 @@ import PokerHand.Hands.TwoPair;
 public class TestHands {
 
 	@Test
-	public void HighCard() {
+	public void highCard() {
 		Card[] c = new Card[5];
 		c[0] = new Card('H', '2');
 		c[1] = new Card('D', '3');
@@ -56,7 +56,7 @@ public class TestHands {
 	}
 
 	@Test
-	public void FullHouse() {
+	public void fullHouse() {
 
 		Card[] c = new Card[5];
 		c[0] = new Card('H', '2');
@@ -94,7 +94,7 @@ public class TestHands {
 	}
 
 	@Test
-	public void FourOfAKind() {
+	public void fourOfAKind() {
 		Card[] c = new Card[5];
 		c[0] = new Card('H', '2');
 		c[1] = new Card('D', '2');
@@ -131,7 +131,7 @@ public class TestHands {
 	}
 
 	@Test
-	public void ThreeOfAKind() {
+	public void threeOfAKind() {
 		Card[] c = new Card[5];
 		c[0] = new Card('H', '2');
 		c[1] = new Card('D', '2');
@@ -168,7 +168,7 @@ public class TestHands {
 	}
 
 	@Test
-	public void Flush() {
+	public void flush() {
 		Card[] c = new Card[5];
 		c[0] = new Card('H', '2');
 		c[1] = new Card('H', '3');
@@ -205,7 +205,7 @@ public class TestHands {
 	}
 
 	@Test
-	public void Straight() {
+	public void straight() {
 		Card[] c = new Card[5];
 		c[0] = new Card('H', '2');
 		c[1] = new Card('D', '3');
@@ -242,7 +242,7 @@ public class TestHands {
 	}
 
 	@Test
-	public void StraightFlush() {
+	public void straightFlush() {
 		Card[] c = new Card[5];
 		c[0] = new Card('D', '2');
 		c[1] = new Card('D', '3');
@@ -279,7 +279,7 @@ public class TestHands {
 	}
 
 	@Test
-	public void Pair() {
+	public void pair() {
 		Card[] c = new Card[5];
 		c[0] = new Card('H', '2');
 		c[1] = new Card('D', '2');
@@ -316,7 +316,7 @@ public class TestHands {
 	}
 
 	@Test
-	public void TwoPair() {
+	public void twoPair() {
 		Card[] c = new Card[5];
 		c[0] = new Card('H', '2');
 		c[1] = new Card('D', '2');

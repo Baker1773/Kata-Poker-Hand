@@ -24,17 +24,17 @@ public abstract class HandType implements IHandType {
 
 	// Generates the hand type
 	// Sets valid, used, handRank
-	protected abstract void Generate();
+	protected abstract void generate();
 
 	public boolean isValidHand() {
 		return valid;
 	}
 
-	public Card[] GetUsedCards() {
+	public Card[] getUsedCards() {
 		return used;
 	}
 
-	public Card[] GetUnusedCards() {
+	public Card[] getUnusedCards() {
 		return unused;
 	}
 
@@ -42,7 +42,7 @@ public abstract class HandType implements IHandType {
 	// This will find the cards used in the hand
 	// but not in the original hand
 	// and generate an array of unused cards
-	protected void GenerateUnusedCards() {
+	protected void generateUnusedCards() {
 		int indexUnused = 0;
 		unused = new Card[originalHand.length - used.length];
 		for (int i = 0; i < originalHand.length; i++) {
@@ -59,7 +59,7 @@ public abstract class HandType implements IHandType {
 		}
 	}
 
-	public int GetTypeRank() {
+	public int getTypeRank() {
 		return handRank;
 	}
 }

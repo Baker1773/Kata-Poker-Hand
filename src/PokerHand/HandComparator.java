@@ -18,8 +18,8 @@ public class HandComparator {
 		HandType handTwo;
 
 		// finds the best hand the the player can make with their cards
-		handOne = findHand(one.GetHand());
-		handTwo = findHand(two.GetHand());
+		handOne = findHand(one.getHand());
+		handTwo = findHand(two.getHand());
 
 		// Try to find the winner based of the cards used in both players hands
 		Pair<Player, String> winner = findBetter(handOne, handTwo, one, two);
@@ -27,9 +27,9 @@ public class HandComparator {
 		// In case of tie, look at the remaining cards and
 		// attempt to resolve the tie
 		// if there is no remaining card, it will remain a tie
-		while (winner.getKey() == null && handOne.GetUnusedCards().length > 0) {
-			handOne = findHand(handOne.GetUnusedCards());
-			handTwo = findHand(handTwo.GetUnusedCards());
+		while (winner.getKey() == null && handOne.getUnusedCards().length > 0) {
+			handOne = findHand(handOne.getUnusedCards());
+			handTwo = findHand(handTwo.getUnusedCards());
 
 			winner = findBetter(handOne, handTwo, one, two);
 		}
@@ -107,28 +107,28 @@ public class HandComparator {
 
 		// if that is still a tie then the reason is set as TIE
 		// and the winner remains null
-		if (handOne.GetTypeRank() > handTwo.GetTypeRank()) {
+		if (handOne.getTypeRank() > handTwo.getTypeRank()) {
 			winner = one;
-			reason = getReasonBetterType(handOne.GetTypeRank(),
-					handOne.GetUsedCards());
-		} else if (handOne.GetTypeRank() < handTwo.GetTypeRank()) {
+			reason = getReasonBetterType(handOne.getTypeRank(),
+					handOne.getUsedCards());
+		} else if (handOne.getTypeRank() < handTwo.getTypeRank()) {
 			winner = two;
-			reason = getReasonBetterType(handTwo.GetTypeRank(),
-					handOne.GetUsedCards());
+			reason = getReasonBetterType(handTwo.getTypeRank(),
+					handOne.getUsedCards());
 		} else {
-			Card p1HighCard = new HighCard(handOne.GetUsedCards())
-					.GetUsedCards()[0];
-			Card p2HighCard = new HighCard(handTwo.GetUsedCards())
-					.GetUsedCards()[0];
-			if (p1HighCard.GetIntegerValue() > p2HighCard.GetIntegerValue()) {
+			Card p1HighCard = new HighCard(handOne.getUsedCards())
+					.getUsedCards()[0];
+			Card p2HighCard = new HighCard(handTwo.getUsedCards())
+					.getUsedCards()[0];
+			if (p1HighCard.getIntegerValue() > p2HighCard.getIntegerValue()) {
 				winner = one;
-				reason = getReasonBetterType(handOne.GetTypeRank(),
-						handOne.GetUsedCards());
-			} else if (p1HighCard.GetIntegerValue() < p2HighCard
-					.GetIntegerValue()) {
+				reason = getReasonBetterType(handOne.getTypeRank(),
+						handOne.getUsedCards());
+			} else if (p1HighCard.getIntegerValue() < p2HighCard
+					.getIntegerValue()) {
 				winner = two;
-				reason = getReasonBetterType(handTwo.GetTypeRank(),
-						handTwo.GetUsedCards());
+				reason = getReasonBetterType(handTwo.getTypeRank(),
+						handTwo.getUsedCards());
 			} else
 				reason = "Tie.";
 		}
@@ -141,7 +141,7 @@ public class HandComparator {
 
 		switch (left) {
 		case 1:
-			reason = "high card: " + cards[0].GetValue();
+			reason = "high card: " + cards[0].getValue();
 			break;
 		case 2:
 			reason = "pair";

@@ -6,7 +6,7 @@ public class FourOfAKind extends HandType {
 
 	public FourOfAKind(Card[] cards) {
 		super(cards);
-		Generate();
+		generate();
 	}
 
 	/**
@@ -15,7 +15,7 @@ public class FourOfAKind extends HandType {
 	 * it see if they are the same card value if they are then there is a four
 	 * of a kind
 	 */
-	public void Generate() {
+	public void generate() {
 		if (originalHand.length >= 4) {
 			PairCard one = new PairCard(originalHand);
 			if (one.isValidHand()) {
@@ -23,7 +23,7 @@ public class FourOfAKind extends HandType {
 				if (two.isValidHand()) {
 					Card oneC = one.used[0];
 					Card twoC = two.used[0];
-					if (oneC.GetIntegerValue() == twoC.GetIntegerValue()) {
+					if (oneC.getIntegerValue() == twoC.getIntegerValue()) {
 						valid = true;
 						handRank = 8;
 						unused = two.unused;
@@ -35,7 +35,7 @@ public class FourOfAKind extends HandType {
 		}
 
 		if (!valid) {
-			GenerateUnusedCards();
+			generateUnusedCards();
 		}
 	}
 }
